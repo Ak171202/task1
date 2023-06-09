@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var currentplayer="X";
+        var board=document.createElement('div');
+        
+        board.style.height= "300px";
+        board.style.width= "300px";
+        
+        board.style.display="flex";
+        board.style.flexdirection="row";
+        board.style.flexWrap="wrap"
+        
+        for(var index=1;index<=9;index++){
+            var box=document.createElement('div');
+            box.style.height="95px";
+            box.style.width="95px";
+            box.style.backgroundColor="aqua";
+            box.style.border="2px solid black";
+            box.style.color="red";
+            box.style.textAlign="center";
+            box.setAttribute("id",index);
+            box.addEventListener('click',function(){
+                if(this.innerText==""){
+                if(currentplayer =="X"){
+                this.innerText= currentplayer;
+                currentplayer="O";
+                }
+                else{
+                    this.innerText=currentplayer;
+                currentplayer="X";
+                }
+            }})
+            board.appendChild(box);
+        }
+      
+        document.body.appendChild(board);
+    </script>
+</body>
+</html>
